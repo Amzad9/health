@@ -1,0 +1,173 @@
+<template>
+  <div class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-8">
+          <NuxtLink to="/#services" class="text-primary-600 hover:text-primary-700 flex items-center mb-6 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 rounded">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Services
+          </NuxtLink>
+        </div>
+
+        <article>
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">General Health Checkup</h1>
+          
+          <div class="prose max-w-none mb-8">
+            <p class="text-xl text-gray-600 mb-8">
+              Comprehensive health assessments and preventive care to keep you in optimal health. Our general health checkups are designed to detect potential health issues early and provide you with a complete picture of your overall wellness.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">What is Included?</h2>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Complete physical examination</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Blood pressure and vital signs monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Laboratory tests (blood work, cholesterol, glucose)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Body mass index (BMI) assessment</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Health risk assessment and counseling</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Personalized health recommendations</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-primary-50 rounded-xl p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Benefits</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Early Detection</h3>
+                <p class="text-gray-600">Identify health issues before they become serious problems.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Preventive Care</h3>
+                <p class="text-gray-600">Take proactive steps to maintain your health and wellness.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Peace of Mind</h3>
+                <p class="text-gray-600">Know your health status and make informed decisions.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Cost Savings</h3>
+                <p class="text-gray-600">Prevent expensive treatments by catching issues early.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">How It Works</h2>
+            <ol class="space-y-4">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold mr-4">1</span>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">Schedule Appointment</h3>
+                  <p class="text-gray-600">Book your checkup online or by phone. We recommend annual checkups for adults.</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold mr-4">2</span>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">Comprehensive Examination</h3>
+                  <p class="text-gray-600">Our certified doctors will conduct a thorough physical examination and review your medical history.</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold mr-4">3</span>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">Laboratory Tests</h3>
+                  <p class="text-gray-600">Complete necessary lab work to assess your overall health markers.</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold mr-4">4</span>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">Results & Recommendations</h3>
+                  <p class="text-gray-600">Receive detailed results and personalized recommendations for maintaining optimal health.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="bg-gray-900 text-white rounded-xl p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">Why Choose Us?</h2>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Board-certified physicians with years of experience</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>State-of-the-art diagnostic equipment</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Comprehensive and detailed health reports</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Follow-up consultations included</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="text-center">
+            <NuxtLink to="/contact" class="btn-primary inline-block">
+              Book Your Health Checkup
+            </NuxtLink>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+useHead({
+  title: 'General Health Checkup - Health & Wellness Center',
+  meta: [
+    {
+      name: 'description',
+      content: 'Comprehensive general health checkups with complete physical examinations, laboratory tests, and personalized health recommendations. Book your appointment today.'
+    }
+  ]
+})
+</script>
+
