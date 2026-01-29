@@ -187,7 +187,6 @@
   "exclude": [
     "../dist",
     "../.data",
-    "../../node_modules",
     "../node_modules/runtime/server",
     "../node_modules/dist/runtime/server",
     "../node_modules/nuxt-site-config/dist/runtime/server",

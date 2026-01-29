@@ -1,6 +1,6 @@
-/// <reference types="@nuxtjs/seo" />
 /// <reference types="@nuxtjs/tailwindcss" />
 /// <reference types="@nuxt/icon" />
+/// <reference types="@nuxtjs/seo" />
 /// <reference types="@nuxt/devtools" />
 /// <reference types="@nuxt/telemetry" />
 /// <reference path="types/builder-env.d.ts" />

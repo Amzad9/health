@@ -71,9 +71,23 @@
             </div>
             
             <div>
-              <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">
-                Message <span class="text-red-500">*</span>
-              </label>
+              <div class="flex items-center justify-between mb-2">
+                <label for="message" class="text-sm font-semibold text-gray-700">
+                  Message <span class="text-red-500">*</span>
+                </label>
+                <button
+                  type="button"
+                  class="text-sm font-semibold text-primary-600 hover:text-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 rounded"
+                  @click="generateSuggestion"
+                  :disabled="isGeneratingSuggestion"
+                >
+                  <span v-if="!isGeneratingSuggestion">Let AI polish</span>
+                  <span v-else class="flex items-center gap-2">
+                    <Icon name="heroicons-outline:arrow-path" class="w-4 h-4 animate-spin" />
+                    Generating…
+                  </span>
+                </button>
+              </div>
               <textarea
                 id="message"
                 v-model="form.message"
@@ -83,6 +97,25 @@
                 placeholder="Tell us how we can help you..."
                 aria-required="true"
               ></textarea>
+              <p class="mt-2 text-xs text-gray-500">
+                {{ aiStatus }}
+              </p>
+            </div>
+
+            <div
+              v-if="aiSuggestion"
+              class="mt-4 bg-gray-50 border border-dashed border-primary-200 rounded-2xl p-4 text-sm text-gray-800 space-y-3"
+            >
+              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">AI Suggested Message</p>
+              <p class="leading-relaxed text-gray-700 whitespace-pre-line">{{ aiSuggestion }}</p>
+              <button
+                type="button"
+                class="w-full btn-outline border-primary-300 text-primary-600 flex items-center justify-center gap-2"
+                @click="applySuggestion"
+              >
+                <Icon name="heroicons-solid:check" class="w-4 h-4" />
+                Use this suggestion
+              </button>
             </div>
             
             <button
@@ -272,6 +305,9 @@ const form = ref({
 const isSubmitting = ref(false)
 const submitMessage = ref(null)
 const showModal = ref(false)
+const aiSuggestion = ref('')
+const aiStatus = ref('Need a clear message? Let AI help polish your note.')
+const isGeneratingSuggestion = ref(false)
 
 const handleSubmit = async () => {
   isSubmitting.value = true
@@ -298,6 +334,8 @@ const handleSubmit = async () => {
       phone: '',
       message: ''
     }
+    aiSuggestion.value = ''
+    aiStatus.value = 'Need a clear message? Let AI help polish your note.'
   } catch (error) {
     submitMessage.value = {
       type: 'error',
@@ -307,6 +345,44 @@ const handleSubmit = async () => {
   } finally {
     isSubmitting.value = false
   }
+}
+
+const generateSuggestion = async () => {
+  if (!form.value.message.trim() || isGeneratingSuggestion.value) {
+    aiStatus.value = 'Please describe how we can help before asking AI for help.'
+    return
+  }
+
+  isGeneratingSuggestion.value = true
+  aiStatus.value = 'Generating AI suggestion…'
+  aiSuggestion.value = ''
+
+  try {
+    const response = await $fetch('/api/contact-ai', {
+      method: 'POST',
+      body: {
+        name: form.value.name,
+        email: form.value.email,
+        phone: form.value.phone,
+        message: form.value.message
+      }
+    })
+
+    aiSuggestion.value = response.suggestion ?? ''
+    aiStatus.value = aiSuggestion.value
+      ? 'Suggestion ready – tap “Use this suggestion” to replace your message.'
+      : 'AI did not return a suggestion. Try again or edit your text.'
+  } catch (error) {
+    aiStatus.value = 'AI helper is unavailable right now. Try again later.'
+  } finally {
+    isGeneratingSuggestion.value = false
+  }
+}
+
+const applySuggestion = () => {
+  if (!aiSuggestion.value) return
+  form.value.message = aiSuggestion.value
+  aiStatus.value = 'Suggestion applied. You can edit it before sending.'
 }
 
 const closeModal = () => {
